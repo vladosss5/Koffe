@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Koffe/App.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/AdminWindow.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/Authorisation.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/AuthorizationWindow.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/ProfileWindow.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/SellerWindow.axaml" value="Koffe/Koffe.csproj" />
+        <entry key="Koffe/Views/sfbg.axaml" value="Koffe/Koffe.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
