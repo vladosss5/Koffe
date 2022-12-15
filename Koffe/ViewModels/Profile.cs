@@ -1,6 +1,13 @@
-﻿namespace Koffe.ViewModels;
+﻿using Koffe.Entities;
 
-public class Profile
+namespace Koffe.ViewModels;
+
+public class Profile : ViewModelBase
 {
+    private static User AuthUserNow { get; set; }
     
+    public Profile()
+    {
+        AuthUserNow = Authorization.AuthUser;
+    }
 }

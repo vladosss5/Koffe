@@ -14,6 +14,7 @@ public class Authorization : ViewModelBase
 {
     private string _password;
     private string _login;
+    public static User AuthUser { get; set; }
 
     private User _user;
     public User User
@@ -56,6 +57,7 @@ public class Authorization : ViewModelBase
 
     private void SingIn(User user, Window obj)
     {
+        AuthUser = user;
         if (user.Post == "Продавец")
         {
             SellerWindow homePage = new SellerWindow();

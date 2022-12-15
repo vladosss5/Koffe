@@ -61,14 +61,12 @@
                 </Border>
                 
 <!-- _______________СПИСОК БЛЮД_______________-->
-
-
-                <Border Grid.Row="1"
-                        Grid.Column="0"
-                        Background="#2b2b2b"
-                        Grid.RowSpan="3"
-                        CornerRadius="25"
-                        Margin="10, 5,10, 10">
+<Border Grid.Row="1"
+        Grid.Column="0"
+        Background="#2b2b2b"
+        Grid.RowSpan="3"
+        CornerRadius="25"
+        Margin="10, 5,10, 10">
                         <DataGrid Name="ListDishes"
                                   Items="{Binding Dish}"
                                   Margin="10">
@@ -82,13 +80,13 @@
                                                         <DataTemplate>
                                                                 <Button HorizontalAlignment="Center" VerticalAlignment="Center"
                                                                         MinHeight="20" MinWidth="20" Background="#1e1038"
-                                                                        Command="{Binding AddDishPreorder}"/>
+                                                                        Command="{Binding ElementName=ThisWindow, Path=AddDishPreorder }" CommandParameter="{Binding }"/>
                                                         </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                         </DataGrid>
-                </Border>
+</Border>
 
 <!-- _______________СПИСОК ПРЕДЗАКАЗА______________ -->
                 <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" 
@@ -96,9 +94,10 @@
                         CornerRadius="25"
                         Margin="10, 5, 10,10"
                         Name="PreOrder">
-                        <DataGrid Margin="10">
+                        <DataGrid Margin="10"
+                                  Items="{Binding Dishes}">
                                 <DataGrid.Columns>
-                                        <DataGridTextColumn IsReadOnly="True" Header="Название блюда" MinWidth="120" MaxWidth="120" Binding="{Binding NameDish}"/>
+                                        <DataGridTextColumn IsReadOnly="True" Header="Название блюда" MinWidth="120" MaxWidth="120" Binding="{Binding Name}"/>
                                         <DataGridTextColumn IsReadOnly="True" Header="Стоимость" MinWidth="70" MaxWidth="70" Binding="{Binding Price}"/>
                                         <DataGridTextColumn IsReadOnly="True" Header="Кол-во" MinWidth="80" MaxWidth="80" Binding="{Binding Count}"/>
                                         <DataGridTemplateColumn>
@@ -106,8 +105,7 @@
                                                         <DataTemplate>
                                                                 <Button HorizontalAlignment="Center" VerticalAlignment="Center"
                                                                         MinHeight="20" MinWidth="20" Background="#1e1038"
-                                                                        Command="{Binding RemoveDishPreorder}"
-                                                                        CommandParameter="{Binding ElementName=ThisWindow}"/>
+                                                                        Command="{Binding ElementName=ThisWindow, Path=RemoveDishPreorder }" CommandParameter="{Binding }"/>
                                                         </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>

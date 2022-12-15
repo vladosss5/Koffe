@@ -16,19 +16,7 @@ public partial class Dish : ViewModelBase
     public float Price { get; set; }
     
     [NotMapped] public int Count { get; set; }
-
-    public ReactiveCommand<Unit, Unit> AddDishPreorder { get; }
     
-    public Dish()
-    {
-        AddDishPreorder = ReactiveCommand.Create(DishChecking);
-    }
-    
-    private void DishChecking()
-    { 
-        ProfileWindow profile_window = new ProfileWindow();
-        profile_window.Show();
-    }
     public virtual ICollection<DishList> DishLists { get; } = new List<DishList>();
 
     public virtual ICollection<RawOnDish> RawOnDishes { get; } = new List<RawOnDish>();
